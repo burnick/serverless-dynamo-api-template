@@ -14,11 +14,6 @@ const dynamoDbClientParams = {
 };
 dotEnv.config();
 
-if (process.env.IS_OFFLINE) {
-  dynamoDbClientParams.region = 'localhost';
-  dynamoDbClientParams.endpoint = 'http://localhost:8000';
-}
-
 const USERS_TABLE = process.env.USERS_TABLE;
 const client = new DynamoDBClient(dynamoDbClientParams);
 const dynamoDbClient = DynamoDBDocumentClient.from(client);
