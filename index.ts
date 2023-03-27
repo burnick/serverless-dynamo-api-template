@@ -7,12 +7,14 @@ import {
 import express from 'express';
 import serverless from 'serverless-http';
 import * as dotEnv from 'dotenv';
+
+dotEnv.config();
+
 const app = express();
 const dynamoDbClientParams = {
   region: process.env.AWS_REGION,
   endpoint: process.env.DYNAMODB_ENDPOINT,
 };
-dotEnv.config();
 
 const USERS_TABLE = process.env.USERS_TABLE;
 const client = new DynamoDBClient(dynamoDbClientParams);
