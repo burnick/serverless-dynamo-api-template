@@ -1,0 +1,8 @@
+node_modules
+.serverless
+DynamoDBLocal_lib
+DynamoDBLocal*
+*.db
+.dynamodb
+.esbuild
+.env*
